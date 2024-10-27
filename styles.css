@@ -1,0 +1,207 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.calendar {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste dinámico con ancho mínimo */
+    width: 100%;
+    justify-items: stretch; /* Estira las celdas para ocupar el 100% */
+}
+
+/* Estilo para cada mes */
+.month {
+    border: 1px solid #ccc;
+    padding: 0;
+    text-align: center;
+}
+
+/* Encabezado del mes */
+.month h3 {
+    margin: 0;
+    padding: 10px 0;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Colores para cada mes utilizando clases */
+.month-1 h3 {
+    background-color: #3498db; /* Enero - Azul */
+}
+
+.month-2 h3 {
+    background-color: #2ecc71; /* Febrero - Verde */
+}
+
+.month-3 h3 {
+    background-color: #f39c12; /* Marzo - Naranja */
+}
+
+.month-4 h3 {
+    background-color: #e74c3c; /* Abril - Rojo */
+}
+
+.month-5 h3 {
+    background-color: #9b59b6; /* Mayo - Morado */
+}
+
+.month-6 h3 {
+    background-color: #2980b9; /* Junio - Azul Oscuro */
+}
+
+.month-7 h3 {
+    background-color: #1abc9c; /* Julio - Verde Agua */
+}
+
+.month-8 h3 {
+    background-color: #e67e22; /* Agosto - Naranja Oscuro */
+}
+
+.month-9 h3 {
+    background-color: #c0392b; /* Septiembre - Rojo Oscuro */
+}
+
+.month-10 h3 {
+    background-color: #8e44ad; /* Octubre - Púrpura */
+}
+
+.month-11 h3 {
+    background-color: #34495e; /* Noviembre - Azul Grisáceo */
+}
+
+.month-12 h3 {
+    background-color: #27ae60; /* Diciembre - Verde */
+}
+
+/* Estilo para la tabla del calendario */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+th, td {
+    width: 14.28%; /* Siete columnas */
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+/* Estilo para los días de semana */
+td {
+    background-color: #f9f9f9;
+}
+
+/* Sábados en azul */
+td.sabado {
+    color: #3498db;
+}
+
+/* Domingos en rojo */
+td.domingo {
+    color: #e74c3c;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .calendar {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Una columna por fila */
+    }
+}
+
+/* Ajustes para impresión */
+@media print {
+    .controls {
+        display: none; /* Ocultar controles al imprimir */
+    }
+    
+    /* Ajustar los calendarios al ancho de la página para impresión */
+    .calendar {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajustar automáticamente el número de columnas */
+        grid-gap: 10px; /* Reducir espacio entre calendarios para impresión */
+    }
+
+    /* Ajustar tamaño de los textos y elementos para mejor visualización impresa */
+    .month h3 {
+        font-size: 1rem; /* Reducir tamaño del título */
+        
+    }
+
+    th, td {
+        padding: 3px; /* Reducir padding en las celdas para ajustarlo al espacio de la página */
+        font-size: 0.8rem; /* Reducir el tamaño de fuente para mejorar legibilidad en impresión */
+    }
+    h1 {
+        display: none; /* Oculta el título durante la impresión */
+    }
+     /* Cambiar de background-color a border-color */
+     .month h3 {
+        background-color: white; /* Para que no interfiera el color de fondo */
+        color: black; /* Asegurar que el texto se vea bien */
+        border: 4px solid; /* Aplicar borde de color */
+    }
+
+    /* Colores para cada mes, aplicados al borde */
+    .month-1 h3 {
+        border-color: #3498db; /* Enero - Azul */
+    }
+
+    .month-2 h3 {
+        border-color: #2ecc71; /* Febrero - Verde */
+    }
+
+    .month-3 h3 {
+        border-color: #f39c12; /* Marzo - Naranja */
+    }
+
+    .month-4 h3 {
+        border-color: #e74c3c; /* Abril - Rojo */
+    }
+
+    .month-5 h3 {
+        border-color: #9b59b6; /* Mayo - Morado */
+    }
+
+    .month-6 h3 {
+        border-color: #2980b9; /* Junio - Azul Oscuro */
+    }
+
+    .month-7 h3 {
+        border-color: #1abc9c; /* Julio - Verde Agua */
+    }
+
+    .month-8 h3 {
+        border-color: #e67e22; /* Agosto - Naranja Oscuro */
+    }
+
+    .month-9 h3 {
+        border-color: #c0392b; /* Septiembre - Rojo Oscuro */
+    }
+
+    .month-10 h3 {
+        border-color: #8e44ad; /* Octubre - Púrpura */
+    }
+
+    .month-11 h3 {
+        border-color: #34495e; /* Noviembre - Azul Grisáceo */
+    }
+
+    .month-12 h3 {
+        border-color: #27ae60; /* Diciembre - Verde */
+    }
+}
+
