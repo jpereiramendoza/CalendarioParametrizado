@@ -39,8 +39,8 @@ function generateCalendar() {
 
     // Generar los meses entre la fecha de inicio y fin
     while (currentDate <= endDate) {
-        months.push(new Date(currentDate));
-        currentDate.setMonth(currentDate.getMonth() + 1);
+        months.push(new Date(currentDate)); // Agregar el mes actual al array
+        currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1); // Crear nueva fecha para el siguiente mes    
     }
 
     // Ajustar grid layout basado en la cantidad de meses por fila
